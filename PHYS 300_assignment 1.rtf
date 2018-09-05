@@ -1,0 +1,35 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww15340\viewh14980\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 #Multiplicity calculation\
+def factor(N):\
+    if N == 0 or N == 1:\
+        return 1\
+    else: \
+        total = 1\
+        for i in range(2,N+1):\
+            total *= i\
+        return total     \
+\
+def Einstein_Model_of_a_Solid_Multiplicity(N, q):\
+    return factor(q + N - 1)/(factor(q) * factor(N-1))\
+\
+N=int(input("type a value for N: "))\
+    \
+for q in range(N+1):\
+    print('when q =', q, ';  the multiplicity is',  Einstein_Model_of_a_Solid_Multiplicity(N, q))\
+\
+type a value for N: 2\
+when q = 0 ;  the multiplicity is 1.0\
+when q = 1 ;  the multiplicity is 2.0\
+when q = 2 ;  the multiplicity is 3.0\
+\
+type a value for N: 3\
+when q = 0 ;  the multiplicity is 1.0\
+when q = 1 ;  the multiplicity is 3.0\
+when q = 2 ;  the multiplicity is 6.0\
+when q = 3 ;  the multiplicity is 10.0}
